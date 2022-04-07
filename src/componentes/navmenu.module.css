@@ -1,0 +1,59 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.nav ul{
+    list-style: none;
+    background-color: #991c20;
+    text-align: center;
+}
+
+.nav ul li{
+    display: inline-block;
+    padding: 20px;
+    transition: all ease-in-out 250ms;
+}
+
+ul li a{
+    color: white ;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+.nav ul li:hover{
+    background-color: #881b1e;
+}
+ul li a:hover{
+    color: white;
+}
+.hide{
+    background-color: #881b1e;
+    color: #991c20;
+}
+.acordion{
+    background-color: #881b1e !important;
+    color: #881b1e;
+}
+.listadodesp{
+    display: block;
+}
+@media (min-width: 570px) {
+   .hide{
+       display: none;
+   }
+   .nav ul li a{
+       color: white !important;
+       font-size: 1.3rem !important;
+   }
+  }
+  @media (max-width: 570px){
+      ul li{
+          
+          text-align: left;
+      }
+    .ulhiden{
+        display: none;
+        text-align: left;
+    }
+
+  }

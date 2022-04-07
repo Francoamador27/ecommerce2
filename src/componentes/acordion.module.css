@@ -1,0 +1,9 @@
+.nav ul li{
+    width: 100%;
+    padding: 20px;
+    transition: all ease-in-out 250m;
+}
+.nombremenu{
+    font-size: 1.5rem !important;
+    color: white !important;
+}

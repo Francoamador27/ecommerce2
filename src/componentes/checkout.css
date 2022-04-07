@@ -1,0 +1,12 @@
+.imgcheckout{
+    width: 300px;
+}
+.sectioncheck{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.pricecheck{
+    margin-left: 40px;
+    font-size: 2rem;
+}

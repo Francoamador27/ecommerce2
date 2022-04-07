@@ -1,0 +1,6 @@
+.cartimage{
+    width: 100px;
+}
+.shoppingCart:hover{
+    cursor: pointer;
+}

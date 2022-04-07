@@ -1,0 +1,45 @@
+.stock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    font-size: 1.5rem;
+}
+.stock p{
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #204ea5;
+}
+
+.stock button {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 5px;
+    background-color: white;
+    border: none;
+}
+button.addcart {
+    color: white;
+    background-color: gray;
+    border-radius: 5px;
+    width: 100px;
+    height: 35px;
+}
+
+button.addcart:hover {
+    color: white;
+    background-color: #1c3d99;
+    border-radius: 5px;
+}
+
+.stock button:hover {
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 5px;
+    background-color: white;
+    border: none;
+    color: blue;
+}
+.addcart{
+    margin-left: 8px;
+}

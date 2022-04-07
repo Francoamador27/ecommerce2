@@ -1,0 +1,46 @@
+.itemdetail{
+    border: 10px;
+}
+.imagendetail{
+    width: 300px;
+    height: auto;
+}
+.titleitemdetail{
+    text-align: center;
+}
+.contentitem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.precioitem{
+    font-size: 2rem;
+}
+.price{
+    color: red;
+}
+.hdescripcion{
+    text-align: center;
+}
+.descripcion{
+    text-align: center;
+}
+.itemcount {
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+}
+.checkout {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+p.pcheck {
+    font-size: 1.2rem;
+}
+.tallestock {
+    margin-top: 25px;
+    line-height: 6px;
+}

@@ -1,0 +1,31 @@
+.cards{
+    width: 250px;
+float: left;
+border: 1px solid  #ababab;
+width: calc(33.333% -16px);
+margin-top: 20px;
+margin-left: 20px;
+box-shadow: 1px 1px 5px #0000002b;
+border-radius: 5px;
+padding: 10px;
+text-align: center;
+}
+
+button.cart {
+    border: none;
+    background-color: white;
+}
+img.imgcard {
+    width: 100%;
+}
+.pricecard{
+    font-size: 1.5rem;
+}
+.cards:hover{
+    float: right;
+
+    cursor: pointer;
+    width: 250px;
+    box-shadow: 1px 3px 20px #c509099f;
+
+}
