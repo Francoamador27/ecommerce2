@@ -48,7 +48,7 @@ const onAdd = (count) => {
 
   return (
     
-    <div className="itemdetail">
+    <div className="itemdetail" key={id}>
    <h1 className="titleitemdetail">{product.title} </h1>
     <div className="contentitem" >
         <img className="imagendetail" src={`../${product.image} `}  />

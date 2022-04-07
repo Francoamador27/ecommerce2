@@ -21,15 +21,17 @@ return (
 <div>
 <div className="stock">
   
+<button
+     onClick={RestStock}>
+        <RemoveIcon/>
+      </button>
+      <p>  {count}</p>
       <button
      onClick={AddStock}>
       <AddIcon/>
       </button>
-      <p>  {count}</p>
-      <button
-     onClick={RestStock}>
-        <RemoveIcon/>
-      </button>
+   
+      
      
      
     </div>
