@@ -9,7 +9,7 @@ import CartContext from "../../context/Cardcontext";
 
 
 
-function ItemCount({stock, initial, onAdd}) {
+function ItemCount({stock, initial, onAdd, quantity}) {
   const {setQuantity} = useContext(CartContext)
 
     const [count, setCount] = useState(initial)

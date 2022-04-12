@@ -47,7 +47,7 @@ const onAdd = (count) => {
 
   return (
     
-    <div className="itemdetail">
+    <div className="itemdetail" key={id}>
    <h1 className="titleitemdetail">{product.title} </h1>
     <div className="contentitem" >
         <img className="imagendetail" src={`../${product.image} `}  />
@@ -64,7 +64,10 @@ const onAdd = (count) => {
    ): (
      <div className="checkout">
        <p className="pcheck"> Ir al Check Out </p>
-    <Link to={'/Checkout'}> <Button>CkeckOut</Button></Link></div>
+    <Link to={'/Checkout'}> <Button>CkeckOut</Button></Link>
+    <Link to={'/'}> <Button>Volver al inicio</Button></Link>
+
+    </div>
    )}
 
 </div>
