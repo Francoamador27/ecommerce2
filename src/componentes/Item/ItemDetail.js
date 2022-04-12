@@ -38,7 +38,6 @@ const onAdd = (count) => {
   if (count > 0 ){
     setClick(!click)
     addProductTocart(product)
-   console.log('agregue al carrito',product)
 
 
   }
@@ -76,6 +75,7 @@ const onAdd = (count) => {
     </div>
     <h2 className="hdescripcion container"> Descripcion   </h2>
     <p className="descripcion">{product.descripcion} </p>
+    <Link to={'/'}><button>seguir comprando</button></Link>
 
     </div>
     

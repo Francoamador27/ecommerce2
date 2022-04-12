@@ -10,9 +10,13 @@ function Cards({data}) {
 
 const navigate = useNavigate();
   const{id, title, descripcion, talle, price, stock, image} = data
-const {cartProducts, addProductTocart} = useContext(CartContext)
+const {cartProducts, addProductTocart,setQuantity} = useContext(CartContext)
   const onAdd = (count) => {
     const total = count * price;
+    addProductTocart(data)
+    setQuantity(count)
+    console.log('quantity desde cardjs',setQuantity)
+
   };
   const changePage = () => {
 navigate(`/Productos/${id}`)
@@ -24,15 +28,14 @@ navigate(`/Productos/${id}`)
 
 const addToCart = (e) => {
   e.stopPropagation()
-  addProductTocart(data)
 }
   return (
     <div className='cards' onClick={changePage} >
   <img className='imgcard' src={`./${image}`} alt={image} />
   <h3>{title} </h3>
   <p className='pricecard'>${price} </p>
-  <button className='cart' onClick={addToCart} ><ItemCount   stock={stock} initial={1} onAdd={onAdd} />
-</button>
+  <div className='cart' onClick={addToCart} ><ItemCount   stock={stock} initial={1} onAdd={onAdd}  />
+</div>
 
   
     </div>

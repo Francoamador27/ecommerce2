@@ -7,7 +7,7 @@ import './checkout.css';
 
 
 function CheckOut() {
-  const { cartProducts } = useContext(CartContext)
+  const { cartProducts, deletProduct, calculeTotalPrice } = useContext(CartContext)
 
   return (
    
@@ -28,13 +28,15 @@ function CheckOut() {
                           <p>$ {cartProduct.price}</p>
 
                           </div>
+                          <button onClick={()=>deletProduct(cartProduct)}>Delete</button>
                           <Divider />
 
                       </section>
                       
                   )
               })}
-
+              <p>total</p>
+<p>{calculeTotalPrice} </p>
 <Link to={'/'}>Volver al inicio </Link>
 </div>
   );

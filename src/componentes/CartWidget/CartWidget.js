@@ -12,9 +12,11 @@ import './CartWidget.css';
 
 
 function CartWidget() {
-  const { cartProducts } = useContext(CartContext)
+  const { cartProducts, quantity } = useContext(CartContext)
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+  console.log('quantity desde itemdetail',quantity)
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -78,11 +80,12 @@ function CartWidget() {
                   return(
                       <MenuItem className='item-cart-modal' key={cartProduct.id}>
                           <div className='item-cart-modal__img'>
-                              <img className='cartimage' src={`./${cartProduct.image}`} /> 
+                              <img className='cartimage' src={`../${cartProduct.image}`} /> 
                           </div>
                           <div className='item-cart-modal__info'>
                               <p>{cartProduct.title}</p>
                               <span>$ {cartProduct.price}</span>
+                              <p>cantidad {quantity} </p>
                           </div>
                           <div className='item-cart-modal__action'>
                               <DeleteIcon />
