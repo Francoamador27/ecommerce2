@@ -4,31 +4,39 @@ import { Button } from "react-bootstrap";
 import Cards from "../Cards/Cards";
 import { mockProductos } from "../mockProductos";
 import './Itema.css';
-import {useParams} from 'react-router-dom'
+import {Navigate, useNavigate, useParams} from 'react-router-dom'
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 import CartContext from "../../context/Cardcontext";
+import {doc, getDoc} from "firebase/firestore";
+import db from "../../firebase/firebase";
 
 const ItemDetail = () => {
- const {id, category} = useParams()
+ const {id} = useParams()
  const [product, setProduct] = useState({})
+ const navigate = useNavigate()
  const [click, setClick] = useState(true);
  const {cartProducts, addProductTocart} = useContext(CartContext)
 
+const getProduct = async() => { 
+const docRef = doc(db, "produtctos", id)
+const docSnap = await getDoc(docRef);
+if(docSnap.exists()){
+console.log("document data:", docSnap.data() );
+let product = docSnap.data()
+product.id = docSnap.id
+setProduct(product)
+}else{
+  navigate('/error404')
+}
+
+}
 
 useEffect( () => {
-  filterProductById(mockProductos, id )
+  getProduct()
 
-},[])
+},[id])
 
-const filterProductById = (array, id) => {
-
-  return array.map( (product)=> {
-if(product.id == id){
-  return setProduct(product) 
-}
-  } )
-}
 useEffect(() => {
   console.log("cartProducts desde itemjs:", cartProducts)
 }, []);
@@ -38,7 +46,6 @@ const onAdd = (count) => {
   if (count > 0 ){
     setClick(!click)
     addProductTocart(product)
-
 
   }
     
@@ -78,7 +85,7 @@ const onAdd = (count) => {
     </div>
     <h2 className="hdescripcion container"> Descripcion   </h2>
     <p className="descripcion">{product.descripcion} </p>
-    <Link to={'/'}><button>seguir comprando</button></Link>
+    <Link className="inicio" to={'/'}><p className="seguirComprando">Seguir comprando</p></Link>
 
     </div>
     
