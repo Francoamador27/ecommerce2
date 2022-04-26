@@ -34,3 +34,9 @@ padding-right: 50px;
 
 border-radius: 10px;
       }
+      .inputs{
+          display: grid;
+      }
+      .MuiButton-root.MuiButton-contained.MuiButton-containedSuccess.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButtonBase-root.css-ke5b6m-MuiButtonBase-root-MuiButton-root {
+        margin-top: 11px;
+      }
