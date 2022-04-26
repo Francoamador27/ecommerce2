@@ -3,11 +3,13 @@ import { useState, useContext } from 'react'
 import { Divider, MenuItem } from "@mui/material";
 import CartContext from "../context/Cardcontext";
 import './checkout.css';
+import DeleteIcon from '@mui/icons-material/Delete';
+
 
 
 
 function CheckOut() {
-  const { cartProducts, deletProduct, calculeTotalPrice } = useContext(CartContext)
+  const { cartProducts, deletProduct, totalPrice, calculeTotalPrice } = useContext(CartContext)
 
   return (
    
@@ -17,27 +19,34 @@ function CheckOut() {
 {cartProducts.map( (cartProduct) => {
                   return(
                       <section className="sectioncheck" >
-                          <div >
+                          <div className="one" >
                               <img className='imgcheckout' src={`./${cartProduct.image}`} /> 
                           </div>
-                          <div className=''>
+                          <div className='two'>
                               <h3>{cartProduct.title}</h3>
-                              <p>{cartProduct.descripcion} </p>
+                              <p>Cantidad seleccionada :{cartProduct.descripcion} </p><p>{cartProduct.cantidad}</p>
                           </div>
                           <div className='pricecheck'>
-                          <p>$ {cartProduct.price}</p>
+                          <p> $ {cartProduct.price}</p>
+                          <p>Total: $ {cartProduct.total} </p>
 
                           </div>
-                          <button onClick={()=>deletProduct(cartProduct)}>Delete</button>
+                          <button className="deleticon" onClick={()=>deletProduct(cartProduct)}> <DeleteIcon/> </button>
+
                           <Divider />
 
                       </section>
                       
                   )
               })}
-              <p>total</p>
-<p>{calculeTotalPrice} </p>
-<Link to={'/'}>Volver al inicio </Link>
+              <div>
+              <div className="grid" >
+                  <p>total</p>
+                  <p>{calculeTotalPrice}</p>
+
+</div>
+     
+</div>
 </div>
   );
 }

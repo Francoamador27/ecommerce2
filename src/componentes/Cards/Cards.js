@@ -11,13 +11,18 @@ function Cards({data}) {
 const navigate = useNavigate();
   const{id, title, descripcion, talle, price, stock, image} = data
 const {cartProducts, addProductTocart,setQuantity} = useContext(CartContext)
-  const onAdd = (count) => {
-    const total = count * price;
+  const [cantidad, setCantidad] = useState(1)
+data.cantidad= cantidad;
+const [total, setTotal] = useState(data.price)
+data.total = total
+const onAdd = (count) => {
+  if (count > 0 ){
     addProductTocart(data)
-    setQuantity(count)
-    console.log('quantity desde cardjs',setQuantity)
-
-  };
+setCantidad(count)
+setTotal(count * data.price)
+  }
+    
+};
   const changePage = () => {
 navigate(`/Productos/${id}`)
   }

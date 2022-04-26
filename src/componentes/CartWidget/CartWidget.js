@@ -12,10 +12,9 @@ import './CartWidget.css';
 
 
 function CartWidget() {
-  const { cartProducts, quantity } = useContext(CartContext)
+  const { cartProducts, deletProduct } = useContext(CartContext)
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-  console.log('quantity desde itemdetail',quantity)
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -85,10 +84,10 @@ function CartWidget() {
                           <div className='item-cart-modal__info'>
                               <p>{cartProduct.title}</p>
                               <span>$ {cartProduct.price}</span>
-                              <p>cantidad {quantity} </p>
+                              <p>cantidad {cartProduct.cantidad} </p>
                           </div>
                           <div className='item-cart-modal__action'>
-                              <DeleteIcon />
+                              <DeleteIcon className="deleti" onClick={()=>deletProduct(cartProduct)} />
                           </div>
                       </MenuItem>
                   )

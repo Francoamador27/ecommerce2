@@ -5,8 +5,26 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 .pricecheck{
     margin-left: 40px;
     font-size: 2rem;
 }
+
+    .deleticon {
+        background: white;
+        border: none;
+        padding: 20px;
+      }
+      .deleticon:hover {
+        background: white;
+        border: none;
+        padding: 20px;
+      }
+      .css-i4bv87-MuiSvgIcon-root:hover {
+          color: red;
+      }
+      .total{
+          
+      }

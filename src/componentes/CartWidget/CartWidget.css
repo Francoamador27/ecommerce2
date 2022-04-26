@@ -4,3 +4,6 @@
 .shoppingCart:hover{
     cursor: pointer;
 }
+.MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.deleti.css-i4bv87-MuiSvgIcon-root:hover {
+    color: red;
+  }

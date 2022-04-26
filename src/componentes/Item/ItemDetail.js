@@ -17,6 +17,10 @@ const ItemDetail = () => {
  const navigate = useNavigate()
  const [click, setClick] = useState(true);
  const {cartProducts, addProductTocart} = useContext(CartContext)
+const [cantidad, setCantidad] = useState(1)
+product.cantidad= cantidad;
+const [total, setTotal] = useState(product.price)
+product.total = total
 
 const getProduct = async() => { 
 const docRef = doc(db, "produtctos", id)
@@ -46,6 +50,9 @@ const onAdd = (count) => {
   if (count > 0 ){
     setClick(!click)
     addProductTocart(product)
+    setCantidad(count)
+    setTotal(count * product.price)
+
 
   }
     
@@ -71,8 +78,10 @@ const onAdd = (count) => {
    ): (
      <div className="checkout">
        <p className="pcheck"> Ir al Check Out </p>
-    <Link to={'/Checkout'}> <Button>CkeckOut</Button></Link>
-    <Link to={'/'}> <Button>Volver al inicio</Button></Link>
+       <div className="d-flex"> 
+    <Link to={'/Checkout'}> <Button className="botones">CkeckOut</Button></Link>
+    <Link to={'/'}> <Button className="botones" >Volver al inicio</Button></Link>
+    </div>
 
     </div>
    )}
@@ -85,7 +94,6 @@ const onAdd = (count) => {
     </div>
     <h2 className="hdescripcion container"> Descripcion   </h2>
     <p className="descripcion">{product.descripcion} </p>
-    <Link className="inicio" to={'/'}><p className="seguirComprando">Seguir comprando</p></Link>
 
     </div>
     
