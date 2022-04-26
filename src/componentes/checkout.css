@@ -25,6 +25,12 @@
       .css-i4bv87-MuiSvgIcon-root:hover {
           color: red;
       }
-      .total{
-          
+      .grid{
+          background-color: #991c20;
+          float: right;
+          color: white;
+padding-left: 50px;
+padding-right: 50px;
+
+border-radius: 10px;
       }

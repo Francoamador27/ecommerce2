@@ -9,7 +9,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 
 function CheckOut() {
-  const { cartProducts, deletProduct, totalPrice, calculeTotalPrice } = useContext(CartContext)
+  const { cartProducts, deletProduct, totalPrice} = useContext(CartContext)
 
   return (
    
@@ -41,8 +41,8 @@ function CheckOut() {
               })}
               <div>
               <div className="grid" >
-                  <p>total</p>
-                  <p>{calculeTotalPrice}</p>
+                  <h3>Total: ${totalPrice}</h3>
+                  <button>Finalizar compra</button>
 
 </div>
      

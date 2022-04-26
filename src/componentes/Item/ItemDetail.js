@@ -41,9 +41,7 @@ useEffect( () => {
 
 },[id])
 
-useEffect(() => {
-  console.log("cartProducts desde itemjs:", cartProducts)
-}, []);
+
 
 const onAdd = (count) => {
   const total = count * product.price;

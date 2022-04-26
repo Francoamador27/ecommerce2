@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 const CartContext = createContext();
 
@@ -11,12 +11,24 @@ const [totalProductos, setTotalProductos] = useState(0)
 const addProductTocart = (product) =>{
 let exist = cartProducts.find(carProduct => carProduct.id === product.id)
 if(!exist) { 
+      
     // setTotalPrice(totalPrice + product.price * product.quantity) 
-    setTotalPrice(totalPrice + product.total)
+    setTotalPrice(product.price * product.cantidad + totalPrice)
     setCartProducts(cartProducts => [...cartProducts, product])
 }
 
 }
+
+useEffect(() => {
+    setTotalPrice(
+        cartProducts.reduce(
+            (acc, cartProduct) => (acc = acc + cartProduct.total),
+            0
+        )
+    )
+},[cartProducts])
+
+
 const deletProduct = (product) => {
     setTotalPrice(totalPrice - product.total)
 
@@ -24,23 +36,16 @@ const deletProduct = (product) => {
 return cartProduct.id !== product.id    } ))
 }
 
-const calculeTotalPrice = ()=>{
-    let total = 0
-    cartProducts.map((cartProduct) =>{
- total = cartProduct.price
-    })
-
-    return total
-}
+    
+    
+    
 const data = {
     cartProducts,
     addProductTocart,
     deletProduct,
     totalPrice,
-    setQuantity,
-    quantity,
+    setQuantity
     
-
 }
 
 return (
