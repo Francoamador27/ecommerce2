@@ -20,7 +20,6 @@ function Navbar() {
 /></Link>
   </div>
   <div  className={styles.enlacess}> 
-  <input type="search" placeholder='¿Que estas buscando?' className={styles.search}></input>
     <CartWidget/>
   </div>
   </div>

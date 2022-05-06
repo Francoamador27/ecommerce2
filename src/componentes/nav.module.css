@@ -13,6 +13,7 @@
 .logo {
     margin-left: 54px;
     align-items: center;
+    justify-content: center;
 }
 .imglogo {
     width: 263px;
@@ -35,6 +36,7 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
+    margin-right: 30px;
 }
 @media (max-width: 600px) {
     

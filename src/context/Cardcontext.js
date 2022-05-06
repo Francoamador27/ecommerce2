@@ -36,7 +36,9 @@ const deletProduct = (product) => {
 return cartProduct.id !== product.id    } ))
 }
 
-    
+    const removeAll =()=>{
+        setCartProducts([])
+    }
     
     
 const data = {
@@ -44,6 +46,7 @@ const data = {
     addProductTocart,
     deletProduct,
     totalPrice,
+    removeAll,
     setQuantity
     
 }

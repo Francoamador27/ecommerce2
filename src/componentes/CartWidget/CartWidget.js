@@ -7,14 +7,16 @@ import { Link } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Button from '@mui/material/Button';
 import CartContext from '../../context/Cardcontext';
-import { Badge } from '@mui/material';
+import { Badge, ButtonBase } from '@mui/material';
 import './CartWidget.css';
 
 
 function CartWidget() {
-  const { cartProducts, deletProduct } = useContext(CartContext)
+  const { cartProducts, deletProduct,removeAll } = useContext(CartContext)
   const [anchorEl, setAnchorEl] = useState(null);
+  const [openScroll, setOpenScroll] = useState(true)
   const open = Boolean(anchorEl);
+
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -22,8 +24,14 @@ function CartWidget() {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  console.log("cartProducts: ", cartProducts)
-
+const Open =()=>{
+    if (cartProducts.length > 5){
+        setOpenScroll(false)
+      }else {
+        setOpenScroll(true)
+      }
+}
+  
   return (
       <div className='cart-button'>
         <Badge badgeContent={cartProducts.length} color="primary" showZero>
@@ -73,11 +81,12 @@ function CartWidget() {
                   transformOrigin={{ horizontal: 'right', vertical: 'top' }}
                   anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
               >
-              <p>Tu Carrito</p>
+              <p className='cart'>Tu Carrito</p>
               <Divider />
               {cartProducts.map( (cartProduct) => {
                   return(
-                      <MenuItem className='item-cart-modal' key={cartProduct.id}>
+                      
+                      <MenuItem className=  'item-cart-modal overflow' key={cartProduct.id}>
                           <div className='item-cart-modal__img'>
                               <img className='cartimage' src={`../${cartProduct.image}`} /> 
                           </div>
@@ -95,7 +104,8 @@ function CartWidget() {
               
               <Divider />
               <div className='footer-modal-cart'>
-                  <Button className="btn-custom"><Link to="/Checkout">Iniciar la compra</Link></Button>
+                  <Button onClick={removeAll}><DeleteIcon/> </Button>
+                  <Button className="btn-custom"><Link className='btn-custom' to="/Checkout">Iniciar la compra</Link></Button>
               </div>
           </Menu>
       </div>

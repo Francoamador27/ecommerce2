@@ -1,21 +1,20 @@
 import { useState, useEffect } from "react";
-import Cards from "../Cards/Cards";
-import './ItemListContainer.css';
-import { mockProductos } from "../mockProductos";
-import Spinner from "../spinner/spinner";
+import Cards from "../componentes/Cards/Cards";
+import '../componentes/ItemListContainer/ItemListContainer.css';
+import Spinner from "../componentes/spinner/spinner";
 import { collection, getDocs, query, where } from "firebase/firestore";
-import db from "../../firebase/firebase";
+import db from "../firebase/firebase";
 
 
 
-function ItemListContainer() {
+function Tecno() {
  
 const [products, setProducts] = useState([])
 const [loading, setLoading] = useState(false)
 
 
 const getProductos= async ()  =>{ 
-  const itemsCollection = collection(db, 'produtctos')  
+  const itemsCollection = query(collection(db, 'produtctos') , where("category", "==", "tecno")) 
   const productsSnapshot = await getDocs(itemsCollection)
   console.log('firebase',productsSnapshot)
   
@@ -71,4 +70,4 @@ useEffect( () =>{
   );
 }
 
-export default ItemListContainer;
+export default Tecno;

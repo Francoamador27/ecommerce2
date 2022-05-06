@@ -7,6 +7,7 @@ import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -62,11 +63,12 @@ export default function CustomizedAccordions() {
           <Typography>
   <nav className={styles.nav}>
           <ul className={styles.listadodesp}>
-  <li><a href="">Colchones</a></li>
-  <li><a href="">Electro</a></li>
-  <li><a href="">Bicicletas</a></li>
-  <li><a href="">Tecno</a></li>
-  <li><a href="">Mas</a></li>
+          <li><Link  to="/">Todos los productos</Link></li>
+          <li><Link  to="/colchon">Colchones</Link></li>
+  <li><Link to="/bicicletas">Bicicletas</Link></li>
+  <li><Link to="/electro">Electro</Link></li>
+  <li><Link to="/tecno">Tecno</Link></li>
+  <li><Link to="/mas">Mas</Link></li>
 </ul>
 </nav>
           </Typography>

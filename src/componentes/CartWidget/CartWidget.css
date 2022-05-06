@@ -7,3 +7,25 @@
 .MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.deleti.css-i4bv87-MuiSvgIcon-root:hover {
     color: red;
   }
+  .cart{
+      text-align: center;
+  }
+  .btn-custom{
+      text-decoration: none;
+      color: #991c20;
+
+  }
+  .item-cart-modal .overflow {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    outline: 0;
+    height: 300px;
+    overflow: auto;
+}
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiMenu-paper.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation0.MuiPopover-paper.css-aqqxug-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper {
+    overflow: scroll;
+}

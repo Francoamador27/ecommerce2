@@ -29,3 +29,25 @@ img.imgcard {
     box-shadow: 1px 3px 20px #c509099f;
 
 }
+@media (max-width: 540px){
+    .cards{
+        width: 150px;
+    float: left;
+    border: 1px solid  #ababab;
+    width: calc(33.333% -16px);
+    margin-top: 20px;
+    margin-left: 0px;
+    box-shadow: 1px 1px 5px #0000002b;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    }
+    .cards:hover{
+        float: right;
+    width: 150px;
+        cursor: pointer;
+        box-shadow: 1px 3px 20px #c509099f;
+    
+    }
+    
+}
